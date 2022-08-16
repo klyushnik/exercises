@@ -7,7 +7,20 @@ public class Main {
     public static void main(String[] args) {
        
         System.out.println(yourNameIsMyName("john", "johanna"));
-        walkOnAxis(2);
+		
+		//set number of test cases and input values
+        Scanner scanner = new Scanner(System.in);
+        int numTestCases = Integer.parseInt(scanner.nextLine());
+        List<Integer> cases = new ArrayList<>();
+		
+        for(int i = 0; i < numTestCases; i++){
+            int testCase = Integer.parseInt(scanner.nextLine());
+            cases.add(testCase);
+        }
+		
+        for(int i : cases) {
+            walkOnAxis(i);
+        }
     }
 
     //Function to check if the shortest name is a subsequence of the longest name
@@ -32,7 +45,6 @@ public class Main {
         //however, in this case, we have one single walk from 0 to n, which adds n to the result
         //so, the formula for this would be ( n(n+1) / 2 ) + n.
         //Since we're printing the result, this function is void.
-        System.out.println(num);
         System.out.println((num * (num + 1) / 2 + num));
     }
 
